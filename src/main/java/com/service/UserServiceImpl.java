@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -26,8 +25,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional(readOnly = true)
-    public Optional<User> findOne(long id) {
-        return userDao.findOne(id);
+    public User findOne(long id) {
+        return userDao.findOne(id).get();
     }
 
     @Transactional

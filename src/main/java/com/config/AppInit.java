@@ -12,14 +12,14 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[]{
-                HibernateCfg.class
+                WebConfig.class
         };
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class[]{
-                WebCfg.class
+                WebConfig.class
         };
     }
 

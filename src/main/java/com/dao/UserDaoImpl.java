@@ -3,7 +3,8 @@ package com.dao;
 import com.model.User;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -40,7 +41,7 @@ public class UserDaoImpl implements UserDao{
     @Override
     public void delete(long id) {
         try {
-            entityManager.remove(findOne(id));
+            entityManager.remove(findOne(id).get());
         } catch (NoSuchElementException ignored) {
             
         }
